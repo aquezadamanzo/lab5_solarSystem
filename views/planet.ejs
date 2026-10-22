@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information: Solar System</title>
+
+    <%- include('partials/includes.ejs') %>
+</head>
+
+<body class="body">
+    <%- include('partials/navbar.ejs') %>
+        <div class="planets">
+            <h1><%= planetData.name %></h1>
+
+            <p class="planetInfo">Distance From Sun: <%= planetData.distanceFromSun %></p>
+            <p class="planetInfo">Year Length: <%= planetData.yearLength %></p>
+            <p class="planetInfo">Description: <%= planetData.description %></p>
+            <p class="planetInfo">Radius: <%= planetData.radius %></p>
+            <p class="planetInfo">Website Link: <%= planetData.websiteLink %></p>
+            <p class="planetInfo">One Earth Day: <%= planetData.oneEarthDay %></p>
+            <p class="planetInfo">Moons: <%= planetData.moons %></p>
+
+            <div class="imageCenter">
+                <% for(let image of images) { %>
+                    <img class= "imageStyle" src="<%= image.webformatURL %>" alt="Planet Image">
+                <% } %>
+            </div>
+        </div>
+
+        <%- include('partials/footer.ejs') %>
+</body>
+
+</html>

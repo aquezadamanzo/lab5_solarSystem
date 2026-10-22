@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Pictures</title>
+    <%- include('partials/includes.ejs') %>
+</head>
+
+<body class="body">
+    <%- include('partials/navbar.ejs') %>
+
+        <div class="planets">
+            <h1 class="titleText">Solar System: Select a Planet to Learn about it</h1>
+        </div>
+
+        <div class="imageCenter">
+            <% for(let image of images) { %>
+                <img class="imageStyle" src="<%= image.webformatURL %>" alt="Planet Image">
+            <% } %>
+        </div>
+
+        <%- include('partials/footer.ejs') %>
+
+</body>
+
+</html>
